@@ -1,13 +1,6 @@
 # graduate
 
 
-
-
-<div>
-	<img src="API.png.png"/>
-</div>
-
-<h2>API</h2>
 <h3>说明:</h3>
 <ul>
       <li>id都为int类型，其他字段都为string类型！</li>
@@ -28,13 +21,13 @@
                     message:'请求成功'
                 }
               
-            }
+            
        错误返回值:
             {
                    status:1,
                    message:errorMessage
             }    
-            );
+            
 ----------------------------------------------------- 学生 ----------------------------------------------------------
 
 <h4>学生注册</h4>
@@ -52,14 +45,14 @@
                     message:'注册成功'
                 }
               
-            }
+            
        错误返回值:
                 {
                    status  : 1,
                 info    : 'error',
                 message:'注册失败'
             }    
-            );          
+                   
 
 
   <h4>学生登陆</h4>
@@ -79,13 +72,13 @@
                     message:'密码匹配正确'
                 }
               
-            }
+            
        错误返回值:{
                     status:1,
                     info    : 'error',
                     message:'密码匹配错误'
             }    
-            ); 
+            
 
 
   <h4>更新用户资料</h4>    
@@ -106,12 +99,12 @@
                     message:'修改成功'
                 }
               
-            }
+            
         错误返回值:{
                    status:1,
                    message:errorMessage
             }    
-            );
+            
 
 
   <h4>获取用户资料</h4>
@@ -125,12 +118,12 @@
                      array[object]
                 }
               
-            }
+            
         错误返回值:{
                    status:1,
                    message:errorMessage
             }    
-            );
+            
 
 
   <h4>头像上传</h4>
@@ -148,101 +141,35 @@
                     message:'成功'
                 }
               
+            
+        错误返回值:{
+                   status:1,
+                   message:errorMessage
+            }    
+
+
+ <h4>更改密码</h4>
+        <span>接口：/forget</span><br/>
+        <span>请求：POST</span><br/>
+        <span>参数：
+            stu_phone 用户手机号 int<br/>
+            stu_password 新密码 int<br/>
+        </span><br/>
+        <span>调用形式：/forget</span><br/>
+
+        成功返回值：
+                {
+                    status:0,
+                    message:'修改成功'
+                }
+              
             }
         错误返回值:{
                    status:1,
                    message:errorMessage
             }    
             );
-
-
-
------------------------------------------------------ 信息分享 ----------------------------------------------------------
-
-  <h4>获得视频</h4>
-        <span>接口：/select_video</span><br/>
-        <span>请求：get</span><br/>
-        <span>参数：无调用参数</span><br/>
-        <span>调用形式：/select_video</span><br/>
-        
-         成功返回值：
-                {
-                array[object]  //返回一个数组，每个视频的信息为数组中的一个对象
-                } 
-              
-            }
-
-
-     <h4>获得笑话</h4>
-        <span>接口：/select_smile</span><br/>
-        <span>请求：get</span><br/>
-        <span>参数：无调用参数</span><br/>
-        <span>调用形式：/select_smile</span><br/>
-        
-         成功返回值：
-                {
-                array[object]  //返回一个数组，每个笑话的信息为数组中的一个对象
-                }
-              
-            }
-
-     <h4>获得推荐话题</h4>
-        <span>接口：/select_top</span><br/>
-        <span>请求：get</span><br/>
-        <span>参数：无调用参数</span><br/>
-        <span>调用形式：/select_top</span><br/>
-        
-         成功返回值：
-                {
-                array[object]  //返回一个数组，每个话题的信息为数组中的一个对象
-                }
-              
-            }
-
-
-      <h4>查询院校库</h4>
-        <span>接口：/select_school</span><br/>
-        <span>请求：get</span><br/>
-        <span>参数：
-            sch_name 
-        </span><br/>
-        <span>调用形式：/select_school?sch_name='北京大学'</span><br/>
-        
-        成功返回值：
-                {
-                 array[object] 每个object为一个详细信息
-                }
-        错误返回值：
-                    status: 1,
-                    info: 'error2',
-                    message: '错误'
-            }
-
-
-
-        <h4>搜索资源</h4>
-        <span>接口：/select_course</span><br/>
-        <span>请求：get</span><br/>
-        <span>参数：
-            cou_name
-        </span><br/>
-        <span>调用形式：/select_course?cou_name='数学一'</span><br/>
-        
-        成功返回值：
-                {
-                 array[object]  每个object为一个详细信息
-                }
-        错误返回值：
-                status: 1,
-                    info: 'error2',
-                    message: '错误'
-            }
-
-
-       
------------------------------------------------------ 信息分享 -----------------------------------------------------------
-
-
+            
 
   <h4>找回密码发送验证码</h4>
         <span>接口：/findVerify</span><br/>
@@ -267,31 +194,189 @@
             );
 
 
-  <h4>更改密码</h4>
-        <span>接口：/forget</span><br/>
-        <span>请求：POST</span><br/>
-        <span>参数：
-            stu_phone 用户手机号 int<br/>
-            stu_password 新密码 int<br/>
-        </span><br/>
-        <span>调用形式：/forget</span><br/>
-
+ <h4>得到自己的下载记录</h4>
+        <span>接口：/getOwnLoad</span><br/>
+        <span>请求：get</span><br/>
+        <span>参数：stu_id</span><br/>
+          
         成功返回值：
-                {
-                    status:0,
-                    message:'修改成功'
-                }
-              
+              array[object]
             }
         错误返回值:{
-                   status:1,
-                   message:errorMessage
+                    status:1,
+                    info:'error',
+                    message:'数据库错误'
+            }    
+            );
+
+   <h4>得到自己的错题</h4>
+        <span>接口：/getOwnFalse</span><br/>
+        <span>请求：get</span><br/>
+        <span>参数：stu_id</span><br/>
+          
+        成功返回值：
+              array[object]
+            }
+        错误返回值:{
+                    status:1,
+                    info:'error',
+                    message:'数据库错误'
             }    
             );
 
 
-  <h4>社区学习圈板块222</h4>
-      <h5>写贴</h5>
+   <h4>得到自己的学习记录</h4>
+        <span>接口：/getOwnLearn</span><br/>
+        <span>请求：get</span><br/>
+        <span>参数：stu_id</span><br/>
+          
+        成功返回值：
+              array[object]
+            }
+        错误返回值:{
+                    status:1,
+                    info:'error',
+                    message:'数据库错误'
+            }    
+            );
+
+----------------------------------------------------- 信息分享 ----------------------------------------------------------
+
+  <h4>获得视频</h4>
+        <span>接口：/select_video</span><br/>
+        <span>请求：get</span><br/>
+        <span>参数：无调用参数</span><br/>
+        <span>调用形式：/select_video</span><br/>
+        
+         成功返回值：
+                {
+                array[object]  //返回一个数组，每个视频的信息为数组中的一个对象
+                } 
+              
+            
+
+
+   <h4>获得笑话</h4>
+        <span>接口：/select_smile</span><br/>
+        <span>请求：get</span><br/>
+        <span>参数：无调用参数</span><br/>
+        <span>调用形式：/select_smile</span><br/>
+        
+         成功返回值：
+                {
+                array[object]  //返回一个数组，每个笑话的信息为数组中的一个对象
+                }
+              
+            }
+
+   <h4>获得推荐话题</h4>
+        <span>接口：/select_top</span><br/>
+        <span>请求：get</span><br/>
+        <span>参数：无调用参数</span><br/>
+        <span>调用形式：/select_top</span><br/>
+        
+         成功返回值：
+                {
+                array[object]  //返回一个数组，每个话题的信息为数组中的一个对象
+                }
+              
+            }
+
+
+   <h4>查询院校库</h4>
+        <span>接口：/select_school</span><br/>
+        <span>请求：get</span><br/>
+        <span>参数：
+            sch_name 
+        </span><br/>
+        <span>调用形式：/select_school?sch_name='北京大学'</span><br/>
+        
+        成功返回值：
+                {
+                 array[object] 每个object为一个详细信息
+                }
+        错误返回值：
+                    status: 1,
+                    info: 'error2',
+                    message: '错误'
+            }
+
+
+
+   <h4>搜索资源</h4>
+        <span>接口：/select_course</span><br/>
+        <span>请求：get</span><br/>
+        <span>参数：
+            cou_name
+        </span><br/>
+        <span>调用形式：/select_course?cou_name='数学一'</span><br/>
+        
+        成功返回值：
+                {
+                 array[object]  每个object为一个详细信息
+                }
+        错误返回值：
+                status: 1,
+                    info: 'error2',
+                    message: '错误'
+            }
+
+
+      <h4>学习视频</h4>
+        <span>接口：/video</span><br/>
+        <span>请求：get</span><br/>
+        <span>参数：无</span><br/>
+          
+        成功返回值：
+              array[object]
+            }
+        错误返回值:{
+                    status:1,
+                    info:'error',
+                    message:'数据库错误'
+            }    
+            );
+
+
+  <h4>考研百科</h4>
+        <span>接口：/news</span><br/>
+        <span>请求：get</span><br/>
+        <span>参数：无</span><br/>
+          
+        成功返回值：
+              array[object]
+            }
+        错误返回值:{
+                    status:1,
+                    info:'error',
+                    message:'数据库错误'
+            }    
+            );
+
+
+  <h4>数学英语政治资料</h4>
+        <span>接口：/learnFile</span><br/>
+        <span>请求：get</span><br/>
+        <span>参数：fileVerify   资料分类识别码</span><br/>
+          
+        成功返回值：
+              array[object]
+            }
+        错误返回值:{
+                    status:1,
+                    info:'error',
+                    message:'数据库错误'
+            }    
+            );
+
+
+  
+
+----------------------------------------------------- 信息分享 -----------------------------------------------------------
+
+------------------------------------------------------经验贴---------------------------------------------------------------
+
+  <h4>写贴</h4>
         <span>/writeNote</span><br/>
         <span>接口：/writeNote</span><br/>
         <span>请求：POST</span><br/>
@@ -315,7 +400,7 @@
             );
 
 
-     <h5>提问帖子</h5>
+  <h4>提问帖子</h4>
         <span>/questionNote</span><br/>
         <span>接口：/questionNote</span><br/>
         <span>请求：POST</span><br/>
@@ -339,7 +424,7 @@
             );
 
 
-    <h5>回复帖子</h5>
+  <h4>回复帖子</h4>
         <span>/answerNote</span><br/>
         <span>接口：/answerNote</span><br/>
         <span>请求：POST</span><br/>
@@ -396,99 +481,5 @@
             );
 
 
-     <h4>得到自己的下载记录</h4>
-        <span>接口：/getOwnLoad</span><br/>
-        <span>请求：get</span><br/>
-        <span>参数：stu_id</span><br/>
-          
-        成功返回值：
-              array[object]
-            }
-        错误返回值:{
-                    status:1,
-                    info:'error',
-                    message:'数据库错误'
-            }    
-            );
-
-     <h4>得到自己的错题</h4>
-        <span>接口：/getOwnFalse</span><br/>
-        <span>请求：get</span><br/>
-        <span>参数：stu_id</span><br/>
-          
-        成功返回值：
-              array[object]
-            }
-        错误返回值:{
-                    status:1,
-                    info:'error',
-                    message:'数据库错误'
-            }    
-            );
-
-
-         <h4>得到自己的学习记录</h4>
-        <span>接口：/getOwnLearn</span><br/>
-        <span>请求：get</span><br/>
-        <span>参数：stu_id</span><br/>
-          
-        成功返回值：
-              array[object]
-            }
-        错误返回值:{
-                    status:1,
-                    info:'error',
-                    message:'数据库错误'
-            }    
-            );
-
-  <h4>学习视频</h4>
-        <span>接口：/video</span><br/>
-        <span>请求：get</span><br/>
-        <span>参数：无</span><br/>
-          
-        成功返回值：
-              array[object]
-            }
-        错误返回值:{
-                    status:1,
-                    info:'error',
-                    message:'数据库错误'
-            }    
-            );
-
-
-  <h4>考研百科</h4>
-        <span>接口：/news</span><br/>
-        <span>请求：get</span><br/>
-        <span>参数：无</span><br/>
-          
-        成功返回值：
-              array[object]
-            }
-        错误返回值:{
-                    status:1,
-                    info:'error',
-                    message:'数据库错误'
-            }    
-            );
-
-
-  <h4>数学英语政治资料</h4>
-        <span>接口：/learnFile</span><br/>
-        <span>请求：get</span><br/>
-        <span>参数：fileVerify   资料分类识别码</span><br/>
-          
-        成功返回值：
-              array[object]
-            }
-        错误返回值:{
-                    status:1,
-                    info:'error',
-                    message:'数据库错误'
-            }    
-            );
-
-
   
-</body>
+  
